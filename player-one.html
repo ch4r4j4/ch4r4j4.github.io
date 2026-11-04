@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a12">
+  <meta name="description" content="Portafolio personal de videojuegos, desarrollo y proyectos digitales.">
+  <title>Player One — Juegos & Código</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0a0a12;--panel:#11111d;--text:#f2f1fb;--muted:#a4a2b8;--pink:#ff4fd8;--cyan:#57f3ff;--line:#28283a;--mono:'DM Mono',monospace;--sans:'Space Grotesk',sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.14;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 85%);z-index:-1}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff12}.brand{display:flex;gap:11px;align-items:center;font-weight:700;letter-spacing:-.04em}.brand-mark{width:32px;height:32px;border:1px solid var(--cyan);color:var(--cyan);display:grid;place-items:center;font-family:var(--mono);font-size:13px;box-shadow:0 0 18px #57f3ff38}.navlinks{display:flex;gap:28px;color:var(--muted);font-size:14px}.navlinks a:hover{color:var(--cyan)}.status{font:11px var(--mono);color:var(--cyan);display:flex;gap:8px;align-items:center}.dot{width:7px;height:7px;background:var(--cyan);border-radius:50%;box-shadow:0 0 12px var(--cyan);animation:pulse 1.8s infinite}
+    .hero{min-height:650px;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;padding:68px 0 80px}.eyebrow{font:12px var(--mono);text-transform:uppercase;letter-spacing:.14em;color:var(--cyan);display:flex;align-items:center;gap:10px}.eyebrow:before{content:"";width:25px;height:1px;background:var(--cyan)}h1{font-size:clamp(54px,8vw,94px);line-height:.98;letter-spacing:-.075em;margin:24px 0 22px}.gradient{background:linear-gradient(100deg,var(--pink),#b28bff 55%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{max-width:560px;color:var(--muted);font-size:18px;line-height:1.7}.actions{display:flex;align-items:center;gap:14px;margin-top:32px}.button{padding:13px 18px;border:1px solid var(--line);font-size:14px;font-weight:600;transition:.2s}.button.primary{background:var(--cyan);border-color:var(--cyan);color:#081014;box-shadow:0 0 28px #57f3ff26}.button:hover{transform:translateY(-3px);box-shadow:0 8px 30px #57f3ff25}.button.secondary:hover{border-color:var(--pink);color:var(--pink)}
+    .console{position:relative;aspect-ratio:1/1;max-width:430px;width:100%;margin:auto;display:grid;place-items:center}.orbit{position:absolute;border:1px solid #ffffff12;border-radius:50%;inset:8%;animation:spin 28s linear infinite}.orbit.two{inset:19%;border-style:dashed;animation-direction:reverse;animation-duration:38s}.orbit:after{content:"";position:absolute;width:9px;height:9px;background:var(--pink);border-radius:50%;top:14%;left:16%;box-shadow:0 0 18px var(--pink)}.orb2{position:absolute;width:6px;height:6px;background:var(--cyan);border-radius:50%;right:18%;bottom:18%;box-shadow:0 0 16px var(--cyan)}.core{position:relative;width:57%;aspect-ratio:1;border:1px solid #ff4fd866;background:radial-gradient(circle at 50% 45%,#322044 0,#171326 48%,#10101a 74%);display:grid;place-items:center;clip-path:polygon(50% 0,93% 24%,93% 76%,50% 100%,7% 76%,7% 24%);filter:drop-shadow(0 0 36px #ff4fd825)}.core:before{content:"";position:absolute;inset:9%;border:1px solid #ffffff20;clip-path:inherit}.controller{font-size:clamp(68px,10vw,110px);filter:drop-shadow(0 0 20px #57f3ff65);animation:float 3.5s ease-in-out infinite}.float-tag{position:absolute;padding:10px 13px;background:#11111de8;border:1px solid var(--line);font:11px var(--mono);color:var(--muted);backdrop-filter:blur(8px)}.tag-one{top:16%;right:1%}.tag-two{bottom:18%;left:0}.tag-three{right:0;bottom:31%;color:var(--pink)}
+    section{padding:86px 0;border-top:1px solid #ffffff12}.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:34px}.kicker{font:11px var(--mono);color:var(--pink);letter-spacing:.14em;text-transform:uppercase}.section-head h2{font-size:clamp(32px,5vw,48px);letter-spacing:-.06em;margin:10px 0 0}.section-note{color:var(--muted);max-width:330px;line-height:1.6;font-size:14px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{padding:25px;background:linear-gradient(145deg,#141421,#0e0e17);border:1px solid var(--line);min-height:220px;transition:.25s;position:relative;overflow:hidden}.card:hover{transform:translateY(-5px);border-color:#57f3ff66}.card:after{content:"";position:absolute;width:130px;height:130px;border-radius:50%;background:#ff4fd80b;right:-50px;bottom:-60px;filter:blur(5px)}.icon{font-size:25px;margin-bottom:25px}.card small{font:10px var(--mono);color:var(--cyan);text-transform:uppercase;letter-spacing:.12em}.card h3{font-size:20px;margin:10px 0}.card p{color:var(--muted);font-size:14px;line-height:1.65;margin:0}.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center}.about-art{min-height:260px;border:1px solid var(--line);background:radial-gradient(ellipse at center,#20132c,#11111d 70%);display:grid;place-items:center;position:relative;overflow:hidden}.about-art span{font:clamp(55px,9vw,100px) var(--mono);color:#ffffff0d;letter-spacing:-.15em}.about-art:after{content:"✦";position:absolute;color:var(--pink);font-size:38px;text-shadow:0 0 28px var(--pink);animation:float 3s infinite}.about-copy p{color:var(--muted);line-height:1.8}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:23px}.chip{border:1px solid var(--line);padding:7px 10px;font:10px var(--mono);color:#c9c7d8}.contact{background:linear-gradient(110deg,#171222,#11111d 60%);border:1px solid #ff4fd833;padding:36px;display:flex;justify-content:space-between;align-items:center;gap:24px}.contact h2{font-size:clamp(28px,4vw,42px);letter-spacing:-.06em;margin:8px 0}.contact p{margin:0;color:var(--muted);font-size:14px}.contact .button{white-space:nowrap}.footer{padding:28px 0;color:#77758b;font:10px var(--mono);display:flex;justify-content:space-between;gap:20px}.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:none}
+    @keyframes spin{to{transform:rotate(360deg)}}@keyframes float{50%{transform:translateY(-10px)}}@keyframes pulse{50%{opacity:.4;box-shadow:0 0 3px var(--cyan)}}
+    @media(max-width:760px){.navlinks{display:none}.hero{grid-template-columns:1fr;min-height:auto;padding:70px 0 60px;gap:22px}.hero-copy{text-align:center}.eyebrow{justify-content:center}h1{font-size:clamp(55px,15vw,82px)}.hero p{margin-inline:auto;font-size:16px}.actions{justify-content:center}.console{max-width:330px}.cards{grid-template-columns:1fr}.card{min-height:180px}.section-head{display:block}.section-note{margin-top:14px}.about{grid-template-columns:1fr;gap:28px}.about-art{min-height:190px}.contact{align-items:flex-start;flex-direction:column;padding:26px}.footer{flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="brand" href="#inicio"><span class="brand-mark">P1</span><span>PLAYER <span class="gradient">ONE</span></span></a>
+      <div class="navlinks"><a href="#universo">Mi universo</a><a href="#sobre-mi">Sobre mí</a><a href="#contacto">Contacto</a></div>
+      <div class="status"><span class="dot"></span> ONLINE / CREATING</div>
+    </nav>
+    <main>
+      <header class="hero" id="inicio">
+        <div class="hero-copy">
+          <div class="eyebrow">Jugador por pasión · Creador por elección</div>
+          <h1>Entre mundos<br>y <span class="gradient">líneas de código.</span></h1>
+          <p>Exploro universos como gamer y construyo experiencias como desarrollador. Este es mi espacio para compartir proyectos, ideas y todo lo que nace cuando la imaginación se pone a jugar.</p>
+          <div class="actions"><a class="button primary" href="#universo">Explorar mi universo <span aria-hidden="true">↘</span></a><a class="button secondary" href="#sobre-mi">Conóceme</a></div>
+        </div>
+        <div class="console" aria-label="Ilustración animada de un mando de videojuego">
+          <div class="orbit"></div><div class="orbit two"></div><div class="orb2"></div>
+          <div class="core"><div class="controller" aria-hidden="true">🎮</div></div>
+          <div class="float-tag tag-one">&lt; DEV_MODE: ON /&gt;</div><div class="float-tag tag-two">XP +∞</div><div class="float-tag tag-three">PLAYER 01</div>
+        </div>
+      </header>
+      <section id="universo" class="reveal">
+        <div class="section-head"><div><div class="kicker">01 / Lo que me mueve</div><h2>Dos mundos. Una misma curiosidad.</h2></div><p class="section-note">La creatividad no tiene pantalla de carga. Aquí conviven las cosas que disfruto y las que me gusta crear.</p></div>
+        <div class="cards">
+          <article class="card"><div class="icon">🕹️</div><small>PLAYER MODE</small><h3>Gaming</h3><p>Fan de los mundos que te atrapan, los retos que te hacen volver y las historias que se quedan contigo después de apagar la consola.</p></article>
+          <article class="card"><div class="icon">⌘</div><small>BUILDER MODE</small><h3>Desarrollo</h3><p>Convirtiendo ideas en experiencias digitales, aprendiendo con cada proyecto y buscando siempre una forma mejor de resolverlo.</p></article>
+          <article class="card"><div class="icon">✨</div><small>CREATIVE MODE</small><h3>Ideas en progreso</h3><p>Proyectos, experimentos y conceptos en construcción. El siguiente nivel siempre empieza con una idea y las ganas de probarla.</p></article>
+        </div>
+      </section>
+      <section id="sobre-mi" class="reveal">
+        <div class="about"><div class="about-art" aria-hidden="true"><span>0101</span></div><div class="about-copy"><div class="kicker">02 / Detrás del player</div><h2>Hola, soy un creador en constante evolución.</h2><p>Me apasionan los videojuegos y la tecnología. Disfruto tanto descubrir cómo se construyen las experiencias digitales como perderme dentro de ellas. Este sitio es mi pequeño checkpoint: un lugar para reunir lo que hago, lo que aprendo y lo que viene después.</p><p>Estoy en modo aprendizaje continuo: probando herramientas, puliendo ideas y construyendo mi camino proyecto a proyecto.</p><div class="chips"><span class="chip">GAMING</span><span class="chip">DESARROLLO</span><span class="chip">CREATIVIDAD</span><span class="chip">APRENDIZAJE</span></div></div></div>
+      </section>
+      <section id="contacto" class="reveal"><div class="contact"><div><div class="kicker">03 / Siguiente misión</div><h2>¿Creamos algo genial?</h2><p>Siempre abierto a buenas ideas, colaboraciones y conversaciones sobre juegos o tecnología.</p></div><a class="button primary" href="mailto:hola@tudominio.com">Escríbeme <span aria-hidden="true">↗</span></a></div></section>
+    </main>
+    <footer class="footer"><span>© <span id="year"></span> PLAYER ONE · HECHO CON CURIOSIDAD</span><span>INSERT COIN · KEEP CREATING</span></footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
